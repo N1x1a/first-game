@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://x82umfsbbg0a" path="res://mob.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://bkn80rnknirpp" path="res://hud.tscn" id="4_1bvp3"]
 
-[sub_resource type="Curve2D" id="Curve2D_0xm2m"]
+[sub_resource type="Curve2D" id="Curve2D_1bvp3"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 477, 0, 0, 0, 0, 0, 477, 718, 0, 0, 0, 0, 0, 715, 0, 0, 0, 0, 1, 1)
+"points": PackedVector2Array(0, 0, 0, 0, -1, -1, 0, 0, 0, 0, 1278, 2, 0, 0, 0, 0, 1275, 719, 0, 0, 0, 0, 1, 715, 0, 0, 0, 0, -1, -1)
 }
 point_count = 5
 
@@ -24,7 +24,7 @@ grow_vertical = 2
 color = Color(0, 0.48626554, 0.4918276, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
-position = Vector2(266, 303)
+position = Vector2(632, 372)
 
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5
@@ -36,16 +36,16 @@ wait_time = 2.0
 one_shot = true
 
 [node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(240, 450)
-
-[node name="MobPath" type="Path2D" parent="."]
-curve = SubResource("Curve2D_0xm2m")
-
-[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
-position = Vector2(1, 1)
-rotation = -0.0021008374
+position = Vector2(635, 366)
 
 [node name="HUD" parent="." instance=ExtResource("4_1bvp3")]
+
+[node name="MobPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_1bvp3")
+
+[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
+position = Vector2(-1, -1)
+rotation = 0.002345578
 
 [connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
