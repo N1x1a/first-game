@@ -1,12 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkn80rnknirpp"]
+[gd_scene format=3 uid="uid://bkn80rnknirpp"]
 
 [ext_resource type="Script" uid="uid://c0ula31h80atp" path="res://hud.gd" id="1_64ctp"]
 [ext_resource type="FontFile" uid="uid://cwerp3u5o5liy" path="res://fonts/Xolonium-Regular.ttf" id="2_8sq4i"]
 
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer" unique_id=139841777]
 script = ExtResource("1_64ctp")
 
-[node name="ScoreLabel" type="Label" parent="."]
+[node name="ScoreLabel" type="Label" parent="." unique_id=1959210580]
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 78.0
@@ -18,7 +18,7 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Message" type="Label" parent="."]
+[node name="Message" type="Label" parent="." unique_id=894820850]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -32,12 +32,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_8sq4i")
 theme_override_font_sizes/font_size = 64
-text = "Dodge the Creeps!"
+text = "Dodge the Enemies!"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="StartButton" type="Button" parent="."]
+[node name="StartButton" type="Button" parent="." unique_id=296871587]
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.80600005
@@ -53,7 +53,7 @@ theme_override_fonts/font = ExtResource("2_8sq4i")
 theme_override_font_sizes/font_size = 64
 text = "Start"
 
-[node name="MessageTimer" type="Timer" parent="."]
+[node name="MessageTimer" type="Timer" parent="." unique_id=62123109]
 wait_time = 2.0
 one_shot = true
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bb3u7mm35n1ae"]
+[gd_scene format=3 uid="uid://bb3u7mm35n1ae"]
 
 [ext_resource type="Script" uid="uid://ce7ku1p7cslma" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://fh50xycuo2iv" path="res://player.tscn" id="1_ig7tw"]
@@ -11,11 +11,11 @@ _data = {
 }
 point_count = 5
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" unique_id=944453335]
 script = ExtResource("1_0xm2m")
 mob_scene = ExtResource("2_h2yge")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=471384776]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -23,29 +23,29 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.48626554, 0.4918276, 1)
 
-[node name="Player" parent="." instance=ExtResource("1_ig7tw")]
+[node name="Player" parent="." unique_id=1346960511 instance=ExtResource("1_ig7tw")]
 position = Vector2(632, 372)
 
-[node name="MobTimer" type="Timer" parent="."]
+[node name="MobTimer" type="Timer" parent="." unique_id=204193429]
 wait_time = 0.5
 
-[node name="ScoreTimer" type="Timer" parent="."]
+[node name="ScoreTimer" type="Timer" parent="." unique_id=1534134258]
 
-[node name="StartTimer" type="Timer" parent="."]
+[node name="StartTimer" type="Timer" parent="." unique_id=436524939]
 wait_time = 2.0
 one_shot = true
 
-[node name="StartPosition" type="Marker2D" parent="."]
+[node name="StartPosition" type="Marker2D" parent="." unique_id=203552596]
 position = Vector2(635, 366)
 
-[node name="HUD" parent="." instance=ExtResource("4_1bvp3")]
+[node name="HUD" parent="." unique_id=728832040 instance=ExtResource("4_1bvp3")]
 
-[node name="MobPath" type="Path2D" parent="."]
+[node name="MobPath" type="Path2D" parent="." unique_id=1546375999]
 curve = SubResource("Curve2D_1bvp3")
 
-[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
+[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath" unique_id=1609345985]
 position = Vector2(-1, -1)
-rotation = 0.002345578
+rotation = 0.0023455783
 
 [connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
